@@ -1,0 +1,363 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<modelVersion>4.0.0</modelVersion>
+<groupId>neusoft</groupId>
+<artifactId>mymaven</artifactId>
+<packaging>war</packaging>
+<version>1.0-SNAPSHOT</version>
+<name>mymaven Maven Webapp</name>
+<url>http://maven.apache.org</url>
+
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <junit.version>4.12</junit.version>
+  <log4j.version>1.2.17</log4j.version>
+  <javassist.version>3.12.1.GA</javassist.version>
+  <commons-dbcp.version>1.4</commons-dbcp.version>
+  <commons-el.version>1.0</commons-el.version>
+  <slf4j-api.version>1.6.1</slf4j-api.version>
+  <slf4j-log4j12.version>1.6.1</slf4j-log4j12.version>
+  <json-lib.version>2.4</json-lib.version>
+  <json.version>20140107</json.version>
+  <activemq.version>5.14.1</activemq.version>
+  <com.jcraft.version>0.1.54</com.jcraft.version>
+  <mysql-jdbc.version>5.1.35</mysql-jdbc.version>
+  <spring.version>4.1.6.RELEASE</spring.version>
+  <spring-jpa.version>1.8.0.RELEASE</spring-jpa.version>
+  <jackson.version>2.1.0</jackson.version>
+  <spring-security.version>4.0.0.RELEASE</spring-security.version>
+  <servlet-api.version>3.1.0</servlet-api.version>
+  <jsp-api.version>2.2</jsp-api.version>
+  <taglibs-standard.version>1.1.2</taglibs-standard.version>
+  <tiles-jsp.version>3.0.5</tiles-jsp.version>
+  <jstl.version>1.1.2</jstl.version>
+  <commons-io.version>2.1</commons-io.version>
+  <commons-fileupload.version>1.2.2</commons-fileupload.version>
+  <httpclient.version>4.3.6</httpclient.version>
+</properties>
+
+<dependencies>
+  <!-- junit包 -->
+  <dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>${junit.version}</version>
+    <scope>test</scope>
+  </dependency>
+
+  <!-- log4j包 -->
+  <dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>${log4j.version}</version>
+  </dependency>
+
+  <!-- 读取字节码包 -->
+  <dependency>
+    <groupId>javassist</groupId>
+    <artifactId>javassist</artifactId>
+    <version>${javassist.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>commons-dbcp</groupId>
+    <artifactId>commons-dbcp</artifactId>
+    <version>${commons-dbcp.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>commons-el</groupId>
+    <artifactId>commons-el</artifactId>
+    <version>${commons-el.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>${slf4j-api.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>${slf4j-log4j12.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>net.sf.json-lib</groupId>
+    <artifactId>json-lib</artifactId>
+    <version>${json-lib.version}</version>
+    <classifier>jdk15</classifier>
+  </dependency>
+  <dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>${json.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>xml-apis</groupId>
+    <artifactId>xml-apis</artifactId>
+    <version>1.4.01</version>
+  </dependency>
+
+  <!--ActiveMQ依赖包 -->
+  <dependency>
+    <groupId>org.apache.activemq</groupId>
+    <artifactId>activemq-all</artifactId>
+    <version>${activemq.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.jvnet.hudson</groupId>
+    <artifactId>ganymed-ssh2</artifactId>
+    <version>build210-hudson-1</version>
+  </dependency>
+  <!--远程执行shell依赖包 -->
+  <dependency>
+    <groupId>com.jcraft</groupId>
+    <artifactId>jsch</artifactId>
+    <version>${com.jcraft.version}</version>
+  </dependency>
+  <!-- mysql接口包 -->
+  <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>${mysql-jdbc.version}</version>
+  </dependency>
+  <!-- https://mvnrepository.com/artifact/ojdbc/ojdbc -->
+  <dependency>
+    <groupId>org.oracle</groupId>
+    <artifactId>ojdbc</artifactId>
+    <version>6</version>
+  </dependency>
+
+  <!-- spring framework包 -->
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-web</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc-portlet</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-websocket</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-tx</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-test</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-oxm</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-messaging</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jms</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-instrument</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-expression</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context-support</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-beans</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aop</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-orm</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-aspects</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>${spring.version}</version>
+  </dependency>
+  <!-- spring-data-jpa包 -->
+  <dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-jpa</artifactId>
+    <version>${spring-jpa.version}</version>
+  </dependency>
+  <!-- spring security相关包 -->
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-web</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-config</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-core</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-acl</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-aspects</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-cas</artifactId>
+    <version>${spring-security.version}</version>
+    <exclusions>
+      <exclusion>
+        <artifactId>log4j-over-slf4j</artifactId>
+        <groupId>org.slf4j</groupId>
+      </exclusion>
+    </exclusions>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-crypto</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-ldap</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-openid</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-remoting</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-taglibs</artifactId>
+    <version>${spring-security.version}</version>
+  </dependency>
+  <!-- jsp相关包 -->
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>${servlet-api.version}</version>
+    <scope>provided</scope>
+  </dependency>
+
+  <dependency>
+    <groupId>javax.servlet.jsp</groupId>
+    <artifactId>jsp-api</artifactId>
+    <version>${jsp-api.version}</version>
+    <scope>provided</scope>
+  </dependency>
+  <dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>jstl</artifactId>
+    <version>${jstl.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>${taglibs-standard.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.tiles</groupId>
+    <artifactId>tiles-jsp</artifactId>
+    <version>${tiles-jsp.version}</version>
+  </dependency>
+  <!-- jackson包 -->
+  <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>${jackson.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+    <version>${jackson.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-annotations</artifactId>
+    <version>${jackson.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>${commons-io.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>${commons-fileupload.version}</version>
+  </dependency>
+  <dependency>
+    <groupId>org.apache.axis</groupId>
+    <artifactId>axis</artifactId>
+    <version>1.4</version>
+  </dependency>
+  <dependency>
+    <groupId>javax.xml.rpc</groupId>
+    <artifactId>javax.xml.rpc-api</artifactId>
+    <version>1.1.1</version>
+  </dependency>
+</dependencies>
+<build>
+  <finalName>mymaven</finalName>
+</build>
+</project>
+

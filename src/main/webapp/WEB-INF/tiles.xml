@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <!-- Default Main Template -->
+   <!-- <definition name="base.definition" template="/WEB-INF/page/public/layout.jsp">
+        <put-attribute name="title" value="" type="string" />
+        <put-attribute name="header" value="/WEB-INF/page/public/header.jsp" />
+        <put-attribute name="body" value="" />
+        <put-attribute name="footer" value="/WEB-INF/page/public/footer.jsp" />
+    </definition>
+
+    <definition name="home.template" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/page/home/home.jsp" />
+        <put-attribute name="title" value="CCTV媒体指数" type="string" />
+    </definition>
+
+    <definition name="hometest.template" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/page/home/index.jsp" />
+        <put-attribute name="title" value="CCTV媒体指数" type="string" />
+    </definition>
+
+    <definition name="submit.template" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/page/test/Submit.jsp" />
+        <put-attribute name="title" value="测试" type="string" />
+    </definition>
+
+    <definition name="test.template" extends="base.definition">
+        <put-attribute name="body" value="/WEB-INF/page/test/Test.jsp" />
+        <put-attribute name="title" value="测试" type="string" />
+    </definition>
+
+    <definition name="login.template" template="/WEB-INF/page/login.jsp">
+        <put-attribute name="title" value="ManagementSystem"
+                       type="string" />
+    </definition>-->
+    <definition name="login.template" template="/WEB-INF/page/login.jsp">
+    </definition>
+
+    <definition name="index.template" template="/WEB-INF/page/index.jsp">
+    </definition>
+    <definition name="main.template" template="/WEB-INF/page/main.jsp">
+        <put-attribute name="body" value="/WEB-INF/page/login.jsp" />
+        <put-attribute name="value" value="/WEB-INF/page/index.jsp" />
+    </definition>
+    <definition name="layout.template" template="/WEB-INF/page/public/layout.jsp">
+    </definition>
+    <definition name="blog_main.template" extends="layout.template">
+        <put-attribute name="title" value="StarStory's Blog" type="string"/>
+        <put-attribute name="header" value="/WEB-INF/page/public/header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/page/public/body.jsp" />
+        <put-attribute name="side" value="/WEB-INF/page/public/side.jsp" />
+        <put-attribute name="foot" value="/WEB-INF/page/public/foot.jsp" />
+    </definition>
+</tiles-definitions>

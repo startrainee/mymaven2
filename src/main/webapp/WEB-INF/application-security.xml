@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd
+       http://www.springframework.org/schema/security
+       http://www.springframework.org/schema/security/spring-security-4.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<!-- 不需要进行安全认证的资源 -->
+	<http pattern="/statics/css/**" security="none" />
+	<http pattern="/statics/img/**" security="none" />
+	<http pattern="/statics/js/**" security="none" />
+	<http pattern="/statics/public/**" security="none" />
+	<http pattern="/blog/**" security="none" />
+	<!-- 资源所需要的权限 -->
+	<!--	<http auto-config="true" use-expressions="true">
+
+            &lt;!&ndash; Customize filter place holder &ndash;&gt;
+            <intercept-url pattern="/home*" access="hasRole('ROLE_HOME')" />
+
+            <intercept-url pattern="/pmsn/**" access="hasAnyRole('ROLE_MANAGER','ROLE_MANAGER_USER')" />
+
+            <intercept-url pattern="/user/**" access="hasRole('ROLE_USER')" />
+            <intercept-url pattern="/person/**" access="hasRole('ROLE_USER')" />
+
+            <intercept-url pattern="/test/**" access="isAuthenticated()" />
+            <intercept-url pattern="/submit/**" access="isAuthenticated()" />
+
+            <intercept-url pattern="/html/**" access="isAuthenticated()" />
+            <intercept-url pattern="/**" access="denyAll" />-->
+		
+		<!--<form-login login-page="/login"
+			authentication-failure-handler-ref="accessFailureHandler"
+			authentication-success-handler-ref="accessSuccessHandler"
+			login-processing-url="/j_spring_security_check" username-parameter="user_name"
+			password-parameter="user_password" />
+		<logout invalidate-session="true" logout-success-url="/login"
+			logout-url="/j_spring_security_logout" />
+
+		<session-management>
+			<concurrency-control error-if-maximum-exceeded="false"
+				max-sessions="10" />
+		</session-management>
+		<csrf disabled="true" />
+		<custom-filter ref="dgSecurityFilter" before="FILTER_SECURITY_INTERCEPTOR" />
+	</http>
+
+	<beans:bean id="accessFailureHandler"
+		class="com.cctv.cctvtest.common.syspermission.AccessAuthenticationFailureHandler">
+		<beans:property name="loginFailedUrl" value="./login" />
+	</beans:bean>
+
+	<beans:bean id="accessSuccessHandler"
+		class="com.cctv.cctvtest.common.syspermission.AccessAuthenticationSuccessHandler">
+		<beans:property name="loginSuccessUrl" value="./hometest" />
+	</beans:bean>
+
+	<beans:bean id="dgSecurityFilter"
+		class="com.cctv.cctvtest.common.syspermission.FilterSecurityInterceptor">
+		<beans:property name="authenticationManager" ref="PortalAuthenticationManager" />
+		<beans:property name="accessDecisionManager" ref="PortalAccessDecisionManager" />
+		<beans:property name="securityMetadataSource" ref="SecurityMetadataSource" />
+	</beans:bean>
+
+	<authentication-manager alias="PortalAuthenticationManager">
+		<authentication-provider ref="userAuthenticationProvider">
+		</authentication-provider>
+	</authentication-manager>
+
+
+	<beans:bean id="SecurityMetadataSource" init-method="loadResourcePermissionDefination"
+		class="com.cctv.cctvtest.common.syspermission.InvocationSecurityMetadataSource" />
+
+	<beans:bean id="userAuthenticationProvider"
+		class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<beans:property name="userDetailsService" ref="userDetailsService" />
+		<beans:property name="hideUserNotFoundExceptions"
+			value="false" />
+		<beans:property name="passwordEncoder" ref="passwordEncoder" />
+	</beans:bean>
+
+	<beans:bean id="userDetailsService"
+		class="com.cctv.cctvtest.common.syspermission.PortalUserDetailService"></beans:bean>
+
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.authentication.encoding.Md5PasswordEncoder" />
+	<beans:bean id="saltSource"
+		class="org.springframework.security.authentication.dao.ReflectionSaltSource">
+		<beans:property name="userPropertyToUse" value="username" />
+	</beans:bean>
+-->
+</beans:beans>

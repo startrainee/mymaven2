@@ -1,0 +1,134 @@
+.header{
+    background: #fff url(../img/spring.jpg);
+    border-bottom: #aaa;
+    padding-bottom: 20px;
+    padding-top: 45px;
+}
+.header #logo{
+    display: block;
+    float: left;
+}
+#mobile-nav-toggle {
+    display: none;
+    margin-top: 10px;
+}
+/* ===============
+Font Awesome Icons
+==================*/
+.fa-bars {
+    font-size: 24px;
+    margin-top: 13px;
+    margin-bottom: 15px;
+}
+
+/*==============
+Styles for the navigation, both mobile and desktop
+================ */
+.clean-nav .nav-pills {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.clean-nav .nav-pills > li {
+    margin-left: 10px;
+}
+/* ===============
+this is for mobile-navigation
+==================*/
+
+@media (max-width: 767px){
+    #mobile-nav-toggle {
+        display: block;
+    }
+    .header{
+        margin-bottom: 0;
+    }
+    .clean-nav {
+        box-shadow: none;
+        float: left;
+        width: 100%;
+    }
+    .clean-nav .navbar-collapse {
+        max-height: none;
+    }
+    .clean-nav .nav-pills > li {
+        margin-left: 0;
+        float: none;
+    }
+    .clean-nav .nav-pills > li > a {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+
+    .clean-nav .nav-pills > li a {
+        line-height: 10px;
+        border: 1px solid #ddd;
+        padding: 11px 16px 11px 20px;
+        }
+}
+/* ===============
+this is for subHeader
+==================*/
+.sub-header{
+    background-color: #f2f2f2;
+    height: 60px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top:1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.sub-title{
+    font-size: 18px;
+    margin-top: -9px;
+}
+.sub-title .sub-title-item a:hover{
+    background-color: #fff;
+    border-radius: 5px;
+}
+.search-block {
+    font-size: 18px;
+}
+
+
+.search-field,.search-button{
+    border:none;
+    height: 35px;
+    border-radius: 5px;
+}
+
+/* ===============
+this is for blog article block
+==================*/
+.blog-block{
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+.blog-block header{
+
+}
+/* ===============
+this is for side widget
+==================*/
+.side-widget {
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+.panel-heading{
+    font-size: 16px;
+    height: 40px;
+}
+.tags {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+.tags li{
+    float:left;
+}
+.tags li a {
+    padding: 3px 15px;
+    display: inline-block;
+    margin: 5px;
+    border: 1px solid rgb(221, 221, 221);
+}

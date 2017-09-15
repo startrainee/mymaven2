@@ -1,0 +1,25 @@
+article{
+    border-radius: 3px;
+}
+article header{
+    padding-left: 15px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+}
+article header span{
+    padding-left: 10px;
+}
+.summary{
+    padding-left: 15px;
+    padding-bottom: 5px;
+}
+.read_more{
+    border: solid 1px #ddd;
+    border-radius: 3px;
+    margin-right: 25px;
+    margin-bottom: 5px;
+    color:#3c3c3c;
+}
+.more a:hover{
+    background-color: #ddd;
+}
